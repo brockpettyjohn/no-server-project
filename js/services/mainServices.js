@@ -1,16 +1,17 @@
 angular.module('noserver')
     .service('mainServices', function () {
 
-        function Trip(country, duration, traveledWith, month, year) {
+        function Trip(country, duration, traveledWith, month, year, photos) {
             this.country = country;
             this.duration = duration;
             this.traveledWith = traveledWith;
             this.month = month;
             this.year = year;
+            this.photos = photos;
         }
 
 
-        var thailand = new Trip('Thailand', '3 weeks', 'April', '2014')
+        var thailand = new Trip('Thailand', '3 weeks', 'April', '2014',[])
 
         var costaRica = new Trip('Costa Rica', '1 week', 'February', '2015');
 
@@ -34,7 +35,11 @@ angular.module('noserver')
 
         var czechRep = new Trip('Czech Republic', '1 day', 'July', '2013');
 
-        var austria = new Trip('Austria', '2 days', 'July', '2013');
+        // var austria = new Trip('Austria', '2 days', 'July', '2013');
+
+        this.getAll = function() {
+            return [thailand, costaRica, nicaragua, holland, sweden, finland, france, germany, spain, croatia, slovenia, czechRep]
+            }
 
 
 

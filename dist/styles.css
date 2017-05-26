@@ -1,2 +1,23 @@
+.header {
+  height: 50 vh;
+  width: 100 vw;
+  border-style: solid black 1px; }
+
+.countries-container ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .countries-container ul li {
+    cursor: pointer;
+    border-top: 1px solid #ccc;
+    float: left;
+    width: 25%;
+    height: 2.5em;
+    line-height: 2.5em;
+    color: #333;
+    font-size: 1em; }
+    .countries-container ul li:hover {
+      text-decoration: underline;
+      transition: all 250ms; }
 
 /*# sourceMappingURL=maps/styles.css.map */

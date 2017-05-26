@@ -4,92 +4,48 @@ angular.module('noserver', ['ui.router']).config(function ($stateProvider, $urlR
 
     $urlRouterProvider.when('', '/');
 
-    $stateProvider;
-    // .state('home', {
-    //     url: '/',
-    //     templateUrl: '../home.html'
-
-    // })
-    // .state('thailand', {
-    //     url: '/thailand',
-    //     templateUrl: 'thailand.html'
-    // })
-    // .state('costa-rica', {
-    //     url: "/costa-rica",
-    //     templateUrl: "costa-rica.html"
-    // })
-    // .state('nicaragua', {
-    //     url: '/nicaragua',
-    //     templateUrl: 'nicaragua.html'
-
-    // })
-    // .state('holland', {
-    //     url: '/holland',
-    //     templateUrl: 'holland.html'
-    // })
-    // .state('sweden', {
-    //     url: "/sweden",
-    //     templateUrl: "sweden.html"
-    // })
-    // .state('finland', {
-    //     url: '/finland',
-    //     templateUrl: 'finland.html'
-    // })
-    // .state('france', {
-    //     url: "/france",
-    //     templateUrl: "france.html"
-    // })
-    // .state('germany', {
-    //     url: '/germany',
-    //     templateUrl: 'germany.html'
-
-    // })
-    // .state('spain', {
-    //     url: '/spain',
-    //     templateUrl: 'spain.html'
-    // })
-    // .state('croatia', {
-    //     url: "/croatia",
-    //     templateUrl: "croatia.html"
-    // })
-    // .state('slovenia', {
-    //     url: '/slovenia',
-    //     templateUrl: 'slovenia.html'
-
-    // })
-    // .state('czech-rep', {
-    //     url: '/czech-rep',
-    //     templateUrl: 'czech-rep.html'
-    // })
-    // .state('austria', {
-    //     url: "/austria",
-    //     templateUrl: "austria.html"
-    // })
+    $stateProvider.state('home', {
+        url: '/',
+        templateUrl: './views/home.html'
+    }).state('trips', {
+        url: '/trips/:country',
+        templateUrl: '/views/trips.html',
+        controller: 'tripCtrl'
+    });
 });
 'use strict';
 
 angular.module('noserver').controller('mainCtrl', function ($scope, mainServices) {
+
+  $scope.countries = mainServices.getAll();
+  console.log($scope.countries);
 
   // $scope.input = mainServices.test
   // $scope.get = mainServices.getAll();
   // $scope.getting = mainServices.getOne(location)
   // console.log($scope.getting)
 
+});
+'use strict';
 
+angular.module('noserver').controller('tripCtrl', function ($scope, $stateParams) {
+  $scope.name = $stateParams.country;
+  console.log($stateParams.country);
 });
 'use strict';
 
 angular.module('noserver').service('mainServices', function () {
 
-    function Trip(country, duration, traveledWith, month, year) {
+    function Trip(country, duration, traveledWith, month, year, photos) {
         this.country = country;
         this.duration = duration;
         this.traveledWith = traveledWith;
         this.month = month;
         this.year = year;
+        this.photos = photos;
     }
 
-    var thailand = new Trip('Thailand', '3 weeks', 'April', '2014');
+    var thailand = new Trip('Thailand', '3 weeks', 'April', '2014', []);
 
     var costaRica = new Trip('Costa Rica', '1 week', 'February', '2015');
 
@@ -113,7 +69,11 @@ angular.module('noserver').service('mainServices', function () {
 
     var czechRep = new Trip('Czech Republic', '1 day', 'July', '2013');
 
-    var austria = new Trip('Austria', '2 days', 'July', '2013');
+    // var austria = new Trip('Austria', '2 days', 'July', '2013');
+
+    this.getAll = function () {
+        return [thailand, costaRica, nicaragua, holland, sweden, finland, france, germany, spain, croatia, slovenia, czechRep];
+    };
 
     // var allTrips = [thailand, london]
 

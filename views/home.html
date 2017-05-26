@@ -1,0 +1,9 @@
+<div class="header">
+ 
+</div>
+
+<div class="countries-container" ng-repeat='c in countries'>
+        <ul ui-sref='trips({country:c.country})'>
+                <li>{{c.country}}</li>
+        </ul>
+</div>
