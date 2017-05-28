@@ -4,6 +4,13 @@ angular.module('noserver')
 $scope.countries = mainServices.getAll();
 console.log($scope.countries)
 
+// $scope.photos = function(){
+//     mainServices.photoData().then(function(response){
+//         $scope.putInView = response.data
+//         console.log($scope.putInView)
+//     })
+// }
+// $scope.photos()
 // $scope.input = mainServices.test
 // $scope.get = mainServices.getAll();
 // $scope.getting = mainServices.getOne(location)
