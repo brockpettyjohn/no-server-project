@@ -4,6 +4,13 @@ angular.module('noserver')
 $scope.countries = mainServices.getAll();
 console.log($scope.countries)
 
+$scope.selectPic = function(currentPic){
+    $scope.selectedPic = currentPic
+}
+
+$scope.closeModal = function(){
+    $scope.selectedPic = null
+}
 // $scope.photos = function(){
 //     mainServices.photoData().then(function(response){
 //         $scope.putInView = response.data

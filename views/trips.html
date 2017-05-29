@@ -7,19 +7,13 @@
         
     </div>
     <div class="photo-box">
-        <img src="{{currentCountry.photos}}" width="500px" height="375px">
-        <img src="{{currentCountry.photos2}}" width="500px" height="375px">
-        <img src="{{currentCountry.photos3}}" width="500px" height="375px">
+        <div ng-repeat="c in currentCountry.photos">
+            <img ng-click="selectPic(c)" src="{{c}}">
+        </div>
     </div>
-    <div class="photo-box">
-        <img src="{{currentCountry.photos4}}" width="500px" height="375px">
-        <img src="{{currentCountry.photos5}}" width="500px" height="375px">
-        <img src="{{currentCountry.photos6}}" width="500px" height="375px">
+    <div ng-if="selectedPic" ng-click="closeModal()" class= "pictureModal">
+        <img class="selected" src="{{selectedPic}}">
     </div>
-    <div class="photo-box">
-        <img src="{{currentCountry.photos7}}" width="500px" height="375px">
-        <img src="{{currentCountry.photos8}}" width="500px" height="375px">
-        <img src="{{currentCountry.photos9}}" width="500px" height="375px">
-    </div>
+   
 
 </div>
