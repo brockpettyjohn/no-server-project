@@ -10,7 +10,7 @@ h2 {
     height: 32vh;
     width: 100vw;
     background-image: url("https://c1.staticflickr.com/5/4249/34765620401_34d5da66ed_c.jpg");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     margin-top: 0px;
     .title-box{
@@ -102,7 +102,7 @@ h2 {
 
 // }
 
-@media(min-width: 768px){
+@media(min-width: 376px){
 .header{
        background-size: cover;
        background-position: center;
