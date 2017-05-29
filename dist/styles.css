@@ -65,7 +65,7 @@ h2 {
   .photo-box img {
     margin: 4px; }
 
-@media (min-width: 376px) {
+@media (min-width: 769px) {
   .header {
     background-size: cover;
     background-position: center;
@@ -74,6 +74,8 @@ h2 {
       height: 0px; }
       .header .title-box h1 {
         font-size: medium; }
+  h2 {
+    font-size: medium; }
   .countries-container ul li {
     width: 25%;
     height: 2.5em;
@@ -92,5 +94,15 @@ h2 {
       margin-right: 17px; }
   .photo-box {
     flex-direction: row; } }
+
+@media (min-width: 376px) {
+  .photo-box {
+    flex-direction: row; }
+  .header {
+    background-size: cover;
+    background-position: center;
+    height: 75vh; }
+    .header .title-box h1 {
+      font-size: medium; } }
 
 /*# sourceMappingURL=maps/styles.css.map */
